@@ -131,3 +131,4 @@ dmypy.json
 # compiled js
 vue_frontend/node_modules/
 static/webpack_bundles/
+vue_frontend/webpack-stats.json

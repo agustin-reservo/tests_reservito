@@ -1,7 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views.generic import TemplateView
 
 # Create your views here.
 
-def index(request):
-    return HttpResponse('This is our homepage! yay!')
+class IndexView(TemplateView):
+
+    template_name ='outreach/homepage.html'

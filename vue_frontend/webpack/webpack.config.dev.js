@@ -9,16 +9,13 @@ module.exports = {
   output: {
     path: Path.join(__dirname, '../../static/webpack_bundles/'),
     filename: '[name].js',
-    publicPath: 'http://localhost:8080',
+    publicPath: 'http://localhost:8080/',
   },
   devServer: {
-    watchOptions: {
-      aggregateTimeout: 5000,
-      poll: 5000,
-      ignored: /node_modules/
+    watchFiles: {
+      paths: ['../src/*'],
     },
     hot: true,
-    quiet: false,
     headers: {'Access-Control-Allow-Origin': '*'},
   },
   resolve: {
@@ -28,7 +25,9 @@ module.exports = {
     },
   },
   plugins: [
-    new BundleTracker({filename: './webpack-stats.json'})
+    new BundleTracker({
+      filename: './webpack-stats.json'
+    })
   ],
   module: {
     rules: [
