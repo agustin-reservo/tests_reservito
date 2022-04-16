@@ -1,4 +1,6 @@
 const Path = require('path');
+const webpack = require('webpack');
+const BundleTracker = require('webpack-bundle-tracker');
 
 module.exports = {
   entry: {
@@ -25,6 +27,9 @@ module.exports = {
       'Static': Path.resolve(__dirname, '../../static'),
     },
   },
+  plugins: [
+    new BundleTracker({filename: './webpack-stats.json'})
+  ],
   module: {
     rules: [
       {

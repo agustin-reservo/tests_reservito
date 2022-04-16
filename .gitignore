@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 # compiled js
-frontend/node_modules/
+vue_frontend/node_modules/
 static/webpack_bundles/
