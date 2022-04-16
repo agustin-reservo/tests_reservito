@@ -132,3 +132,6 @@ dmypy.json
 vue_frontend/node_modules/
 static/webpack_bundles/
 vue_frontend/webpack-stats.json
+
+# Django staticfiles
+staticfiles/
