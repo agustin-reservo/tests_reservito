@@ -4,7 +4,7 @@ services:
   web:
     build: .
     user: ${UID:-1000}:${GID:-1000}
-    command: python manage.py runserver 0.0.0.0:8000
+    command: sh deploy/start_django.sh
     volumes:
       - .:/code
     ports:
@@ -12,7 +12,7 @@ services:
   npm_dev:
     build: .
     user: ${UID:-1000}:${GID:-1000}
-    command: npm --prefix vue_frontend/ run start
+    command: sh deploy/start_npm.sh
     volumes:
       - .:/code
     ports:
