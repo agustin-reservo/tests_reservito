@@ -1,0 +1,35 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block head_css %}
+  {{ block.super }}
+  <link href="{% static 'css/signin.css' %}" rel="stylesheet">
+{% endblock head_css %}
+
+{% block body %}
+  <main class="form-signin">
+    <form method="POST">
+      {% csrf_token %}
+      <img class="mb-4" src="{% static 'img/irasutoya/icon_medical_woman04.png' %}" alt="" width="72" height="57">
+      <h1 class="h3 mb-3 fw-normal">Ingresa aquí</h1>
+
+      <div class="form-floating">
+        <input type="text" name="username" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Nombre de Usuario</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Contraseña</label>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Recuérdame
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar Sesión</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+    </form>
+  </main>
+
+{% endblock body %}

@@ -1,19 +1,48 @@
-<!DOCTYPE html>
+{% extends "core/base.html" %}
 {% load static  %}
 {% load render_bundle from webpack_loader %}
-<html>
-  <head>
-    {% render_bundle 'app' 'css' %}
-  </head>
-  <body>
+
+{% block head %}
+  {% render_bundle 'app' 'css' %}
+{% endblock head %}
+
+{% block body %}
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Reservito</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown04">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <a class="btn btn-outline-info" type="submit" href="{% url 'core:login' %}">Log In</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
     <h1>This is our homepage! yay!</h1>
-    <h1>My First Heading</h1>
-    <p>My first paragraph.</p>
     <div id="app">
       <home></home>
     </div>
-    {% render_bundle 'app' 'js' %}
-  </body>
-</html> 
-
-
+  </div>
+  {% render_bundle 'app' 'js' %}
+{% endblock body %}

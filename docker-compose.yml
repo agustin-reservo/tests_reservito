@@ -9,3 +9,11 @@ services:
       - .:/code
     ports:
       - "8000:8000"
+  npm_dev:
+    build: .
+    user: ${UID:-1000}:${GID:-1000}
+    command: npm --prefix vue_frontend/ run start
+    volumes:
+      - .:/code
+    ports:
+      - "8080:8080"
