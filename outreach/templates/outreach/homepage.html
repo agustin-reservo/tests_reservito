@@ -1,15 +1,18 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
+{% load static  %}
 {% load render_bundle from webpack_loader %}
 <html>
   <head>
-    {% render_bundle 'app' %}
+    {% render_bundle 'app' 'css' %}
   </head>
   <body>
     <h1>This is our homepage! yay!</h1>
-
     <h1>My First Heading</h1>
     <p>My first paragraph.</p>
-
+    <div id="app">
+      <home></home>
+    </div>
+    {% render_bundle 'app' 'js' %}
   </body>
 </html> 
 
