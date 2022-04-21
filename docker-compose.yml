@@ -1,19 +1,25 @@
 version: '3'
 
+volumes:
+  deploy_scripts:
+    name: deploy_scripts
+
 services:
   web:
     build: .
     user: ${UID:-1000}:${GID:-1000}
-    command: sh deploy/start_django.sh
+    command: sh deploy/unix_start_django.sh
     volumes:
       - .:/code
+      - deploy_scripts:/code/deploy
     ports:
       - "7777:8000"
   npm_dev:
     build: .
     user: ${UID:-1000}:${GID:-1000}
-    command: sh deploy/start_npm.sh
+    command: sh deploy/unix_start_npm.sh
     volumes:
       - .:/code
+      - deploy_scripts:/code/deploy
     ports:
-      - "7778:8080"
+      - "7778:7778"

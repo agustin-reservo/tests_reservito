@@ -11,7 +11,7 @@ module.exports = {
   output: {
     path: Path.join(__dirname, '../../static/webpack_bundles/'),
     // filename: '[name].js',
-    publicPath: 'http://localhost:8080/',
+    publicPath: 'http://localhost:7778/',
   },
   devServer: {
     watchFiles: {

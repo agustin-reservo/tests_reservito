@@ -17,3 +17,6 @@ RUN pip install -r requirements.txt
 COPY requirements-dev.txt /code/
 RUN pip install -r requirements-dev.txt
 COPY . /code/
+
+RUN sed 's/\r//g' deploy/start_django.sh > /code/deploy/unix_start_django.sh
+RUN sed 's/\r//g' deploy/start_npm.sh > /code/deploy/unix_start_npm.sh
