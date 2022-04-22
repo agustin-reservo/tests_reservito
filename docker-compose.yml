@@ -2,7 +2,6 @@ version: '3'
 
 volumes:
   deploy_scripts:
-    name: deploy_scripts
 
 services:
   web:
