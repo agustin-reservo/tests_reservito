@@ -16,6 +16,10 @@
           <label for="password">Contraseña</label>
           <input type="password" name="password" v-model="password">
         </div>
+        <div>
+          <label for="password">Ingrese nuevamente la contraseña</label>
+          <input type="password" name="password_dos_confirmar" v-model="password_dos_confirmar">
+        </div>
         <button class="btn btn-primary" type="submit">
           Enviar
         </button>
@@ -45,6 +49,7 @@ export default {
       username: '',
       email: '',
       password: '',
+      password_dos_confirmar: '',
     }
   },
   props: {
