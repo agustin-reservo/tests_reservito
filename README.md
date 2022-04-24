@@ -19,5 +19,7 @@ docker-compose build
 - Correr el contenedor:
 
 ```
-docker-compose up -d web
+docker-compose up -d
 ```
+
+se debe entrar por el puerto establecido en docker-compose
