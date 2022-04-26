@@ -1,6 +1,7 @@
-# reservito
+# Reservito
 
-Repositorio mínimo de pruebas para ejemplos y varios
+Repositorio mínimo de pruebas para ejemplos y varios.
+
 
 # QUICKSTART
 
@@ -9,7 +10,7 @@ Repositorio mínimo de pruebas para ejemplos y varios
 - Construir los contenedores
 - Instalar Docker
 - Construir los contenedores
-- Subir los contenedores
+- Subir los contenedores (Ojo que el contenedor de webpack se demora ~30 segundos en subir en windows)
 - Acceder a la aplicación en http://localhost:7777
 
 ## Instalación de Docker
@@ -25,24 +26,24 @@ En Windows:
 Seguir las instrucciones para instalar Docker Desktop: https://docs.docker.com/desktop/windows/install/
 El contenedor con npm se demora bastante en windows y no hemos descubierto por qué.
 
-## C
+- Construir los contenedores
 
 ```
 docker-compose build
 ```
 
-- Correr el contenedor:
+- Correr los contenedores:
 
 ```
 docker-compose up -d
 ```
 
-- Ver los logs:
+
+- Para ver los logs (con los contenedores andando):
 
 ```
 docker-compose logs -f
 ```
-
 
 
 * Si tienes alguna duda escríbenos
